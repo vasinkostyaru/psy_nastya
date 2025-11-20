@@ -36,7 +36,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 20px;
 }
@@ -184,6 +184,10 @@ body {
 
 /* Адаптивность для планшетов */
 @media (min-width: 600px) {
+  body {
+    align-items: center;
+  }
+
   .container {
     max-width: 540px;
   }
@@ -238,27 +242,5 @@ body {
   .contact-button {
     flex: 0 1 auto;
     min-width: 160px;
-  }
-}
-
-/* Темы для темной схемы (опционально) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #2c2c2c;
-    --color-secondary: #3a3a3a;
-    --color-text: #e8e8e8;
-    --color-text-light: #b8b8b8;
-  }
-
-  body {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary) 0%,
-      var(--color-secondary) 100%
-    );
-  }
-
-  .card {
-    background: #2a2a2a;
   }
 }
