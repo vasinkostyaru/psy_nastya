@@ -1,0 +1,264 @@
+/* Сброс стилей и базовые настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS переменные для цветовой схемы (пастельная палитра) */
+:root {
+  --color-primary: #e8dcc4;
+  --color-secondary: #dce4f5;
+  --color-accent: #b8a9c9;
+  --color-text: #4a4a4a;
+  --color-text-light: #6b6b6b;
+  --color-white: #ffffff;
+  --color-telegram: #7daad3;
+  --color-whatsapp: #8fbc8f;
+  --color-email: #a5b4d4;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 25px rgba(0, 0, 0, 0.12);
+  --border-radius: 20px;
+  --border-radius-sm: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Базовые стили body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica", "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Контейнер */
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Карточка визитки */
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  padding: 32px 24px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Секция фото */
+.photo-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Секция информации */
+.info-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Секция контактов */
+.contacts-section {
+  margin-top: 32px;
+}
+
+.contacts-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Кнопки контактов */
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-white);
+  transition: var(--transition);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-button:active {
+  transform: translateY(0);
+}
+
+.contact-button .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Цвета кнопок */
+.telegram {
+  background: var(--color-telegram);
+}
+
+.telegram:hover {
+  background: #6a99c2;
+}
+
+.whatsapp {
+  background: var(--color-whatsapp);
+}
+
+.whatsapp:hover {
+  background: #7dab7d;
+}
+
+.email {
+  background: var(--color-email);
+}
+
+.email:hover {
+  background: #94a3c3;
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 600px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .card {
+    padding: 40px 36px;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+/* Адаптивность для десктопов */
+@media (min-width: 900px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .card {
+    padding: 48px 44px;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .contacts-grid {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-button {
+    flex: 0 1 auto;
+    min-width: 160px;
+  }
+}
+
+/* Темы для темной схемы (опционально) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #2c2c2c;
+    --color-secondary: #3a3a3a;
+    --color-text: #e8e8e8;
+    --color-text-light: #b8b8b8;
+  }
+
+  body {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
+    );
+  }
+
+  .card {
+    background: #2a2a2a;
+  }
+}
