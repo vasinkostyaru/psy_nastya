@@ -7,8 +7,8 @@
 
 /* CSS переменные для цветовой схемы (пастельная палитра) */
 :root {
-  --color-primary: #e8dcc4;
-  --color-secondary: #dce4f5;
+  --color-primary: #dce4f5;
+  --color-secondary: #d4f0e8;
   --color-accent: #b8a9c9;
   --color-text: #4a4a4a;
   --color-text-light: #6b6b6b;
@@ -53,7 +53,7 @@ body {
   background: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-soft);
-  padding: 32px 24px;
+  padding: 16px;
   transition: var(--transition);
 }
 
@@ -64,7 +64,7 @@ body {
 /* Секция фото */
 .photo-section {
   text-align: center;
-  margin-bottom: 24px;
+  margin-block: 24px 10px;
 }
 
 .profile-photo {
